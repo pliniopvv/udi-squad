@@ -49,7 +49,7 @@ export class CadastrarComponent implements OnInit {
       this.auth.create(user).then(
         userByHost => {
           if (userByHost.userId) {
-            this.router.navigate(['off/login']);
+            this.router.navigate(['login']);
             if (this.auth.login(user.username, user.password)) {
               this.router.navigate(['on/perfil']);
             }
