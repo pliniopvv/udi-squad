@@ -4,4 +4,5 @@ cls
 echo ###    Compilando arquivos.
 start /wait cmd /C build.bat
 echo ###    Executando projeto.
-node backend/dist/main.js
+cd backend
+node dist/main.js
