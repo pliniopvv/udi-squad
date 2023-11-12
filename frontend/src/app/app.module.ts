@@ -7,10 +7,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LogoffModule } from './logoff/logoff.module';
 import { HttpClientModule } from '@angular/common/http';
 import { LoggedModule } from './logged/logged.module';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { httpInterceptorProviders } from './auth';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +23,7 @@ import { LoggedModule } from './logged/logged.module';
     LoggedModule,
     NgbModule
   ],
-  providers: [],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from '../model/user';
@@ -8,9 +9,9 @@ import { User } from '../model/user';
 export class AuthenticationService {
   private token: string | null | undefined;
 
-  private API_LOGIN = `auth/login`;
-  private API_NEW = `auth/cadastrar`;
-  private API_ME = `busca/me`;
+  private API_LOGIN = `${environment.API}auth/login`;
+  private API_NEW = `${environment.API}auth/cadastrar`;
+  private API_ME = `${environment.API}auth/me`;
 
   constructor(private http: HttpClient) { }
 
@@ -29,6 +30,13 @@ export class AuthenticationService {
     return this.token;
   }
 
+  isLogged() {
+    if (this.getToken() != null)
+      return true;
+    else
+      return false;
+  }
+
   async login(login: string, password: string) {
     let post_data = { username: login, password };
     try {
@@ -45,8 +53,8 @@ export class AuthenticationService {
     }
   }
 
-  me() {
-    let ret = this.http.get<any>(this.API_ME).toPromise();
+  async me() {
+    let ret = await this.http.get<User>(this.API_ME).toPromise();
     return ret;
   }
 

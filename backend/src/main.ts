@@ -9,6 +9,7 @@ async function bootstrap() {
     AppModule,
   );
   app.useStaticAssets(join(__dirname, "../public_html"));
+  app.enableCors();
   await app.listen(parseInt(env.PORT));
 }
 bootstrap();
