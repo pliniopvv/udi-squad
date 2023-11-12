@@ -8,7 +8,6 @@ async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(
     AppModule,
   );
-  app.useStaticAssets(join(__dirname, "../public_html"));
   await app.listen(parseInt(env.PORT));
 }
 bootstrap();
