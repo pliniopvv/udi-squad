@@ -7,7 +7,6 @@ const process_1 = require("process");
 async function bootstrap() {
     const app = await core_1.NestFactory.create(app_module_1.AppModule);
     app.useStaticAssets((0, path_1.join)(__dirname, "../public_html"));
-    console.log(process_1.env.PORT);
     await app.listen(parseInt(process_1.env.PORT));
 }
 bootstrap();

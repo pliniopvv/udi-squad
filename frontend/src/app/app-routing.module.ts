@@ -6,7 +6,7 @@ import { CadastrarComponent } from './logoff/cadastrar/cadastrar.component';
 const routes: Routes = [
   { path: 'cadastrar', component: CadastrarComponent, pathMatch: 'full' },
   { path: 'login', component: LoginComponent, pathMatch: 'full' },
-  { path: '', redirectTo: 'login' , pathMatch: 'full' },
+  { path: '**', redirectTo: 'login' },
 ];
 
 @NgModule({

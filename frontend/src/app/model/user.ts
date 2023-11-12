@@ -1,4 +1,5 @@
 export class User {
-  private userId: number = 0;
-  private username: string = "";
+  public userId: number = 0;
+  public username: string = "";
+  public password?: string;
 }

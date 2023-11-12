@@ -1,7 +1,7 @@
 <div class="container">
 
   <div class="col">
-    <div class="m-auto w-25 rounded p-2 " >
+    <div class="" >
       <div class="text-center">
         <img src="/assets/udisquad.png" alt="" srcset="" width="200" height="200">
         <h3 class="text-body-secondary">Udi Squad</h3>
@@ -22,15 +22,28 @@
             </div>
             <div class="form-group">
               <label for="password" class="form-label">Repita a senha</label>
-              <input type="password" class="form-control" id="password" placeholder="Password" autocomplete="off" [formControl]="senha2">
+              <input type="password" class="form-control" id="password2" placeholder="Password" autocomplete="off" [formControl]="senha2">
             </div>
+          </div>
+
+          <p *ngIf="loading">
+            <img src="/assets/loading.webp" alt="" width="12" height="12" /> Cadastrando ...
+          </p>
+
+          <div class="alert alert-dismissible alert-danger" *ngIf="email_invalido || senhas_diferentes">
+            <p *ngIf="email_invalido" class="text-primary">
+              <img src="/assets/icon_error.svg" alt="" width="12" height="12" /> E-mail inválido.
+            </p>
+            <p *ngIf="senhas_diferentes" class="text-primary">
+              <img src="/assets/icon_error.svg" alt="" width="12" height="12" /> Senhas não conferem.
+            </p>
           </div>
 
           <div class="text-end">
             <span class="mx-2">
               <a routerLink="/login" href="/login" >Logar</a>
             </span>
-            <button type="submit" class="btn btn-primary">Cadastrar</button>
+            <button type="button" class="btn btn-primary" (click)="cadastrar()">Cadastrar</button>
           </div>
 
         </fieldset>

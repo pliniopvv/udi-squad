@@ -9,7 +9,7 @@ export class AuthenticationService {
   private token: string | null | undefined;
 
   private API_LOGIN = `auth/login`;
-  private API_NEW = `auth/new`;
+  private API_NEW = `auth/cadastrar`;
   private API_ME = `busca/me`;
 
   constructor(private http: HttpClient) { }
@@ -30,13 +30,13 @@ export class AuthenticationService {
   }
 
   async login(login: string, password: string) {
-    let post_data = { login, password };
+    let post_data = { username: login, password };
     try {
       let ret = await this.http.post<any>(this.API_LOGIN, post_data).toPromise();
 
       if (ret)
-        if (ret.token)
-          this.setToken(ret.token);
+        if (ret.access_token)
+          this.setToken(ret.access_token);
 
       return true;
     } catch (error) {

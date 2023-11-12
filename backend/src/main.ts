@@ -9,7 +9,6 @@ async function bootstrap() {
     AppModule,
   );
   app.useStaticAssets(join(__dirname, "../public_html"));
-  console.log(env.PORT);
   await app.listen(parseInt(env.PORT));
 }
 bootstrap();
