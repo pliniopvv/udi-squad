@@ -1,0 +1,44 @@
+<div class="container">
+
+  <div class="col">
+    <div class="m-auto w-25 rounded p-2 " >
+      <div class="text-center">
+        <img src="/assets/udisquad.png" alt="" srcset="" width="200" height="200">
+        <h3 class="text-body-secondary">Udi Squad</h3>
+        <p class="text-body-secondary">Grupo de desenvolvedores independentes em Uberlândia.</p>
+      </div>
+
+      <form>
+        <legend>Cadastre-se</legend>
+        <fieldset>
+          <div class="mb-2">
+            <div class="form-group">
+              <label for="login" class="form-label">Login</label>
+              <input type="email" class="form-control" id="login" aria-describedby="login" placeholder="Enter email" [formControl]="email">
+            </div>
+            <div class="form-group">
+              <label for="password" class="form-label">Senha</label>
+              <input type="password" class="form-control" id="password" placeholder="Password" autocomplete="off" [formControl]="senha">
+            </div>
+            <div class="form-group">
+              <label for="password" class="form-label">Repita a senha</label>
+              <input type="password" class="form-control" id="password" placeholder="Password" autocomplete="off" [formControl]="senha2">
+            </div>
+          </div>
+
+          <div class="text-end">
+            <span class="mx-2">
+              <a routerLink="/login" href="/login" >Logar</a>
+            </span>
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+          </div>
+
+        </fieldset>
+      </form>
+
+
+
+
+    </div>
+  </div>
+</div>
