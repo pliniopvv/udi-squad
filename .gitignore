@@ -133,4 +133,6 @@ dist
 #adicionais
 backend/public_html/*
 backend/backend/*
+backend/dist
+backend/build
 publish
