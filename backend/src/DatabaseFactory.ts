@@ -1,8 +1,11 @@
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { env } from 'process';
-import { User } from './users/user.entity';
+import { User } from './users/entities/user.entity';
+import { Feedcard } from './feedcard/entities/feedcard.entity';
+import { Foto } from './foto/entities/foto.entity';
+import { UserComplement } from './user-complements/entities/user-complement.entity';
 
-let entidades = [User];
+let entidades = [User, Feedcard, Foto, UserComplement];
 
 export class DatabaseFactory {
     static buildSQLite() {

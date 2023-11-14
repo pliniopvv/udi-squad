@@ -1,0 +1,12 @@
+<form>
+  <div class="form-group">
+    <label for="login" class="form-label mt-4">Nome (Nick)</label>
+    <input type="text" id="email" class="form-control" aria-describedby="login" placeholder="Digite um apelido para você:" [formControl]="nome">
+  </div>
+  <div class="text-right">
+    <!-- <span class="mx-2">
+      <a routerLink="/cadastrar" href="/cadastrar" >Cadastrar</a>
+    </span> -->
+    <button type="button" class="btn btn-primary" (click)="salvar()">Salvar</button>
+  </div>
+</form>

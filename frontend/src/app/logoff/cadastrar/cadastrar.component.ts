@@ -48,7 +48,7 @@ export class CadastrarComponent implements OnInit {
       user.password = this.senha.value;
       this.auth.create(user).then(
         userByHost => {
-          if (userByHost.userId) {
+          if (userByHost.id) {
             this.router.navigate(['login']);
             if (this.auth.login(user.username, user.password)) {
               this.router.navigate(['on/perfil']);
