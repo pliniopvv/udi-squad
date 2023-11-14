@@ -1,0 +1,20 @@
+<ng-container *ngIf="!user; else onLoad">
+  <img src="/assets/loading.webp" alt="" width="12" height="12" /> Logando ...
+</ng-container>
+<ng-template #onLoad>
+  <div class="box-perfil">
+    <div class="border rounded-circle pic-perfil">
+      <!-- <img src="{{user.foto_perfil.arquivo}}" alt="" srcset="" width="150" height="150"> -->
+      <img src="./assets/notfound_perfil.jpg" alt="" srcset="" width="150" height="150">
+    </div>
+    <div class="mt-2 text-center">
+      <ng-container *ngIf="user.complements; else withoutName">
+        {{user.complements.nome}}
+      </ng-container>
+      <ng-template #withoutName>
+         Sem nome.
+      </ng-template>
+
+    </div>
+  </div>
+</ng-template>

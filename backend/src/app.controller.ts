@@ -4,7 +4,7 @@ import { join } from 'path';
 import { LocalAuthGuard } from './auth/local-auth.guard';
 import { AuthService } from './auth/auth.service';
 import { JwtAuthGuard } from './auth/jwt-auth.guard';
-import { User } from './users/user.entity';
+import { User } from './users/entities/user.entity';
 import { Md5 } from 'ts-md5';
 
 @Controller()
@@ -13,11 +13,6 @@ export class AppController {
     private authService: AuthService,
     private usersService: UsersService
     ) {}
-
-  @Get()
-  getAngular(@Res() response): void {
-    return response.sendFile(join(__dirname, "../public_html/")) ;
-  }
 
   @UseGuards(LocalAuthGuard)
   @Post('auth/login')
@@ -28,8 +23,10 @@ export class AppController {
 
   @UseGuards(JwtAuthGuard)
   @Get('auth/me')
-  getProfile(@Request() req) {
-    return req.user;
+  async getProfile(@Request() req) {
+    // return req.user;
+    let ret = await this.usersService.findOne(req.user.id);
+    return ret;
   }
 
   @Post('auth/cadastrar')
@@ -37,15 +34,15 @@ export class AppController {
     let userDto = req;
     let user = new User();
 
-    // try {
+    try {
       user.username = userDto.username;
       user.password = Md5.hashStr(userDto.password);
       let usuario = await this.usersService.add(user);
       let {password, ...result} = usuario;
       return result;
-    // } catch (error) {
-    //   throw new Error("Username/password inválidos.");
-    // }
+    } catch (error) {
+      throw new Error("Username/password inválidos.");
+    }
 
 
   }

@@ -1,0 +1,9 @@
+<div class="mb-3">
+  <ul ngbNav #nav="ngbNav" class="nav-tabs">
+    <li ngbNavItem *ngFor="let alert of listAlerts">
+      <a ngbNavLink>{{alert.btnName}}</a>
+      <ng-template ngbNavContent>{{alert.body}}</ng-template>
+    </li>
+  </ul>
+  <div [ngbNavOutlet]="nav"></div>
+</div>

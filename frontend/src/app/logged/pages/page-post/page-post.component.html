@@ -1,0 +1,7 @@
+<div class="d-inline-flex w-100">
+  <app-perfil [user]="user"></app-perfil>
+  <div class="flex-column flex-fill">
+    <app-postedit (onPost)="receivePost($event)" ></app-postedit>
+    <app-feedline [listcard]="listcards"></app-feedline>
+  </div>
+</div>

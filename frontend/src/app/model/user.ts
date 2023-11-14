@@ -1,5 +1,8 @@
+import { UserComplements } from "./user-complements";
+
 export class User {
-  public userId: number = 0;
+  public id: number = 0;
   public username: string = "";
   public password?: string;
+  public complements?: UserComplements;
 }

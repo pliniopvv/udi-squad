@@ -8,6 +8,7 @@ import { User } from '../model/user';
 })
 export class AuthenticationService {
   private token: string | null | undefined;
+  private user: User | undefined;
 
   private API_LOGIN = `${environment.API}auth/login`;
   private API_NEW = `${environment.API}auth/cadastrar`;
@@ -53,9 +54,9 @@ export class AuthenticationService {
     }
   }
 
-  async me() {
-    let ret = await this.http.get<User>(this.API_ME).toPromise();
-    return ret;
+  async me(): Promise<User> {
+    if (this.user == null) this.user = await this.http.get<any>(this.API_ME).toPromise();
+    return this.user;
   }
 
   logout() {
