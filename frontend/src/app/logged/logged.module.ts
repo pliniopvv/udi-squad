@@ -2,20 +2,36 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { LoggedRoutingModule } from './logged-routing.module';
-import { PerfilComponent } from './perfil/perfil.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
 import { LoggedComponent } from './logged.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AlertpanelComponent } from './components/alertpanel/alertpanel.component';
+import { PageHomeComponent } from './pages/page-home/page-home.component';
+import { FeedlineComponent } from './components/feedline/feedline.component';
+import { FeedcardComponent } from './components/feedcard/feedcard.component';
+import { PagePostComponent } from './pages/page-post/page-post.component';
+import { PosteditComponent } from './components/postedit/postedit.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     PerfilComponent,
     LoggedComponent,
-    NavbarComponent
+    NavbarComponent,
+    AlertpanelComponent,
+    PageHomeComponent,
+    FeedlineComponent,
+    FeedcardComponent,
+    PagePostComponent,
+    PosteditComponent,
   ],
   imports: [
     CommonModule,
-    LoggedRoutingModule
+    LoggedRoutingModule,
+    ReactiveFormsModule,
+    NgbModule
   ]
 })
 export class LoggedModule { }

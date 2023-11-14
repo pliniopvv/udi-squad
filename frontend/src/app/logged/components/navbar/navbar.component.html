@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">UdiSquad</a>
+
+  <div class="navbar-nav" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <!-- <li class="nav-item">
+        <a class="nav-link" href="#">Features</a>
+      </li> -->
+      <li>
+        <div ngbDropdown class="d-inline-block">
+          <a type="button" class="nav-link dropdown-toggle" ngbDropdownToggle>
+            Perfil
+          </a>
+          <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            <button ngbDropdownItem routerLink="perfil">Home</button>
+            <button ngbDropdownItem routerLink="postar">Postar</button>
+            <!-- <button ngbDropdownItem>Editar Perfil</button> -->
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link clicable" (click)="logoff">Sair
+          <!-- <span class="sr-only">(current)</span> -->
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>

@@ -7,6 +7,10 @@ import { DatabaseFactory } from './DatabaseFactory';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
 import { AuthModule } from './auth/auth.module';
+import { FeedcardModule } from './feedcard/feedcard.module';
+import { UserComplementsModule } from './user-complements/user-complements.module';
+import { FotoModule } from './foto/foto.module';
+import { DataSource } from 'typeorm';
 
 @Module({
   imports: [
@@ -16,9 +20,14 @@ import { AuthModule } from './auth/auth.module';
       rootPath: join(__dirname, '..', 'public_html'),
     }),
     AuthModule,
-    UsersModule
+    UsersModule,
+    FeedcardModule,
+    UserComplementsModule,
+    FotoModule
   ],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule {
+  constructor(private dataSource: DataSource) {}
+}
