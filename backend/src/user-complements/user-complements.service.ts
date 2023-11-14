@@ -25,11 +25,20 @@ export class UserComplementsService {
   }
 
   findOne(id: number) {
-    return this.userComponentRepository.findBy({ id: Equal(id) });
+    // return this.userComponentRepository.findOneBy({ id: Equal(id) });
+    return this.userComponentRepository
+    .createQueryBuilder("UserComponents")
+    .leftJoinAndSelect("UserComponents.user", "user")
+    .where("UserComponents.id = :id", { id })
+    .getOne();
   }
 
-  update(id: number, updateUserComplementDto: UpdateUserComplementDto) {
-    return this.userComponentRepository.update({ id: Equal(id) }, updateUserComplementDto);
+  async update(id: number, updateUserComplementDto: UpdateUserComplementDto) {
+    let ret = await this.userComponentRepository.update({ id: Equal(id) }, updateUserComplementDto);
+    if (ret && ret?.affected >= 1)
+      return true;
+    else
+      return false;
   }
 
   remove(id: number) {

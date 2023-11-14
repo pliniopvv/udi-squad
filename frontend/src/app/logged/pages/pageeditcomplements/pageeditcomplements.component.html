@@ -1,0 +1,6 @@
+<div class="d-inline-flex w-100">
+  <app-perfil [user]="user"></app-perfil>
+  <div class="flex-column flex-fill">
+    <app-editcomplements (onEdited)="updateMe($event)"></app-editcomplements>
+  </div>
+</div>

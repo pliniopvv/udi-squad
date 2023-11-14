@@ -13,7 +13,7 @@ export class FeedService {
   private URL_API: string = `${environment.API}api/feedcard/`;
 
   find(id: number): Promise<Feedcard> {
-      return this.http.get<Feedcard>(`${this.URL_API}${id}`).toPromise();
+      return this.http.get<Feedcard>(`${this.URL_API}/${id}`).toPromise();
   }
   findAll(): Promise<Feedcard[]> {
       return this.http.get<Feedcard[]>(this.URL_API).toPromise();
@@ -22,10 +22,10 @@ export class FeedService {
      return this.http.post<Feedcard>(this.URL_API, feedCard).toPromise();
   }
   update(id: number, feedcard: Feedcard) {
-     return this.http.patch<Feedcard>(`${this.URL_API}${id}`, feedcard).toPromise();
+     return this.http.patch<Feedcard>(`${this.URL_API}/${id}`, feedcard).toPromise();
   }
   remove(id: number) {
-     return this.http.delete<Feedcard>(`${this.URL_API}${id}`).toPromise();
+     return this.http.delete<Feedcard>(`${this.URL_API}/${id}`).toPromise();
   }
 
   MockData(): Promise<Feedcard[]> {

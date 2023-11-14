@@ -13,6 +13,8 @@ import { FeedcardComponent } from './components/feedcard/feedcard.component';
 import { PagePostComponent } from './pages/page-post/page-post.component';
 import { PosteditComponent } from './components/postedit/postedit.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { EditcomplementsComponent } from './components/editcomplements/editcomplements.component';
+import { PageEditComplementsComponent } from './pages/pageeditcomplements/pageeditcomplements.component';
 
 
 @NgModule({
@@ -26,6 +28,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     FeedcardComponent,
     PagePostComponent,
     PosteditComponent,
+    EditcomplementsComponent,
+    PageEditComplementsComponent,
   ],
   imports: [
     CommonModule,

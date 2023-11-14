@@ -9,32 +9,32 @@ export class FeedcardController {
   constructor(private readonly feedcardService: FeedcardService) {}
 
   @Post()
-  // @UseGuards(JwtAuthGuard)
+  @UseGuards(JwtAuthGuard)
   create(@Body() createFeedcardDto: CreateFeedcardDto) {
   createFeedcardDto.created_at = new Date();
     return this.feedcardService.create(createFeedcardDto);
   }
 
   @Get()
-  // @UseGuards(JwtAuthGuard)
+  @UseGuards(JwtAuthGuard)
   findAll() {
     return this.feedcardService.findAll();
   }
 
   @Get(':id')
-  // @UseGuards(JwtAuthGuard)
+  @UseGuards(JwtAuthGuard)
   findOne(@Param('id') id: string) {
     return this.feedcardService.findOne(+id);
   }
 
   @Patch(':id')
-  // @UseGuards(JwtAuthGuard)
+  @UseGuards(JwtAuthGuard)
   update(@Param('id') id: string, @Body() updateFeedcardDto: UpdateFeedcardDto) {
     return this.feedcardService.update(+id, updateFeedcardDto);
   }
 
   @Delete(':id')
-  // @UseGuards(JwtAuthGuard)
+  @UseGuards(JwtAuthGuard)
   remove(@Param('id') id: string) {
     return this.feedcardService.remove(+id);
   }
