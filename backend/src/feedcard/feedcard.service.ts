@@ -25,6 +25,7 @@ export class FeedcardService {
     return this.feedcardRepository.createQueryBuilder('feedcard')
     .leftJoinAndSelect("feedcard.user","user")
     .leftJoinAndSelect("user.complements","complements")
+    .orderBy("feedcard.created_at", "DESC")
     .getMany();
   }
 

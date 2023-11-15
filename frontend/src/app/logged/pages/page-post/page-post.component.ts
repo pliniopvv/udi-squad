@@ -39,7 +39,7 @@ export class PagePostComponent implements OnInit {
   }
 
   receivePost(feedcard: Feedcard) {
-    this.listcards.push(feedcard);
+    this.listcards.unshift(feedcard);
   }
 
 }
