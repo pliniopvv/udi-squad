@@ -3,6 +3,9 @@
     <!-- <img src="{{card.user.complements.foto_perfil.arquivo}}" class="rounded-circle align-center" alt="" srcset="" width="20" height="20"> -->
     <img src="./assets/notfound_perfil.jpg" class="rounded-circle align-center" alt="" srcset="" width="20" height="20">
     {{card.user.complements.nome}}
+    <span class="float-right">
+      {{card.created_at | date:"dd/MM/yyyy hh:mm" }}
+    </span>
   </div>
   <div class="card-body">
     <p class="card-text">{{card.body}}</p>
