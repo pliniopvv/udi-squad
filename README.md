@@ -6,8 +6,11 @@ Sistema para Integração de Desenvolvedores de Uberlândia em busca de oportuni
 
 ## Frameworks utilizados
 
-- ✅ Frontend: Angular 16
-- ✅ Backend: Nest 10.2.0
+- ✅ Node 14.
+- ✅ Frontend: Angular 12 [Doc](https://v12.angular.io/docs)
+- ✅ Backend: Nest 9 [Doc](https://docs.nestjs.com/v9/)
+- ✅ Bootstrap: 4.5 [Doc](https://getbootstrap.com/docs/4.6/getting-started/introduction/)
+- ✅ Bootswatch/slate: 4.5 [Doc](https://ng-bootstrap.github.io/releases/10.x/#/components/dropdown/examples)
 
 ## Test
 
@@ -19,3 +22,8 @@ Sistema para Integração de Desenvolvedores de Uberlândia em busca de oportuni
 Pacote para auxiliar a publicação no host gratuito: https://udisquad.onrender.com/
 
 🌈 configuração temporária até o desenvolvimento de um build melhor.
+
+
+## Considerações
+
+Foi necessária a realização de downgrade do Node para uma versão 14 pois é esta a configuração disponível gratuitamente no servidor render.com
