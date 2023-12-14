@@ -1,47 +1,106 @@
 <div class="container">
-
   <div class="col">
-    <div class="" >
+    <div class="">
       <div class="text-center">
-        <img src="/assets/udisquad.png" alt="" srcset="" width="200" height="200">
+        <img
+          src="/assets/udisquad.png"
+          alt=""
+          srcset=""
+          width="200"
+          height="200"
+        />
         <h3 class="text-body-secondary">Udi Squad</h3>
-        <p class="text-body-secondary">Grupo de desenvolvedores independentes em Uberlândia.</p>
+        <p class="text-body-secondary">
+          Grupo de desenvolvedores independentes em Uberlândia.
+        </p>
       </div>
 
       <form>
         <fieldset>
-
           <div class="mb-2">
             <div class="form-group">
               <label for="login" class="form-label mt-4">Login</label>
-              <input type="text" id="email" class="form-control" aria-describedby="login" placeholder="Enter email" [formControl]="email">
+              <input
+                type="text"
+                id="email"
+                class="form-control"
+                aria-describedby="login"
+                placeholder="Enter email"
+                [formControl]="email"
+              />
             </div>
             <div class="form-group">
               <label for="password" class="form-label mt-2">Senha</label>
-              <input type="password" id="senha" class="form-control" placeholder="Password" autocomplete="off" [formControl]="senha">
+              <input
+                type="password"
+                id="senha"
+                class="form-control"
+                placeholder="Password"
+                autocomplete="off"
+                [formControl]="senha"
+              />
             </div>
           </div>
 
           <p *ngIf="loading">
-            <img src="/assets/loading.webp" alt="" width="12" height="12" /> Logando ...
+            <img src="/assets/loading.webp" alt="" width="12" height="12" />
+            Logando ...
           </p>
 
-          <div class="alert alert-dismissible alert-danger" *ngIf="generic_login_error">
+          <div
+            class="alert alert-dismissible alert-danger"
+            *ngIf="generic_login_error"
+          >
             <p *ngIf="generic_login_error" class="text-primary">
-              <img src="/assets/icon_error.svg" alt="" width="12" height="12" /> Usuário/Senha não localizado.
+              <img src="/assets/icon_error.svg" alt="" width="12" height="12" />
+              Usuário/Senha não localizado.
             </p>
           </div>
 
           <div class="text-right">
             <span class="mx-2">
-              <a routerLink="/cadastrar" href="/cadastrar" >Cadastrar</a>
+              <a routerLink="/cadastrar" href="/cadastrar">Cadastrar</a>
             </span>
-            <button type="button" class="btn btn-primary" (click)="logar()">Logar</button>
+            <button type="button" class="btn btn-primary" (click)="logar()">
+              Logar
+            </button>
           </div>
-
         </fieldset>
       </form>
 
+      <div class="jumbotron mt-2">
+        <div class="container">
+          <div class="row text-center">
+            <div class="col">
+              <h1 class="display-4">Disponível agora para Android e Windows!</h1>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col text-center">
+              <!-- <img src="/assets/downloadheretheapk.png" alt="" width="480" height="164"> -->
+              <p>Download do apk</p>
+              <a href="/assets/download/UdiSquad.apk"
+                ><img
+                  src="/assets/downloadheretheapk.png"
+                  alt=""
+                  width="380"
+                  height="114"
+              /></a>
+            </div>
+            <div class="col text-center">
+              <p>Download do exe</p>
+              <!-- <img src="/assets/windowslogo.png" alt="" width="474" height="511"> -->
+              <a href="/assets/download/Windows.zip">
+                <img
+                  src="/assets/windowslogo.png"
+                  alt=""
+                  width="105"
+                  height="114"
+              /></a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
